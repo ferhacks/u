@@ -15,7 +15,6 @@ const get = require('got')
 const sinesp = require('sinesp-api')
 const { coins } = require('./lib/coins')
 const { stdout } = require('process')
-const bent = require('bent')
 const request = require('request')
 const color = require('./lib/color')
 const { spawn, exec, execFile } = require('child_process')
@@ -76,6 +75,7 @@ module.exports = kconfig = async (kill, message) => {
         const isBlocked = blockNumber.includes(sender.id)
 		const isLeg = exsv.includes(chatId)
 		const mute = slce.includes(chatId)
+		const pvmte = slce.includes(sender.id)
         const isNsfw = isGroupMsg ? nsfw_.includes(chat.id) : false
         const isUrl = new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/gi)
 	
@@ -980,9 +980,9 @@ if (isMedia) {
             break
 			
 
-	case 'akinator':
+	case 'aki':
 			if (mute) return console.log('Ignorando comando [Silence]')
-			const region = 'mx';
+			const region = 'es';
 			if (args[0] == '-r') {
 				let akinm = args[1].match(/^[0-9]+$/)
 				if (!akinm) return kill.reply(from, 'Responda solo con 0 o 1!\n0 = Si\n1 = No', id)
@@ -990,11 +990,11 @@ if (isMedia) {
 				await aki.start();
 				const myAnswer = `${args[1]}`
 				await aki.step(myAnswer);
-				await kill.reply(from, `Pregunta: ${aki.question}\n\nProgresso: ${aki.progress}\n\nResponde co /akinator -r [0 o 1], 0 = si, 1 = No.`, id)
+				await kill.reply(from, `Pregunta: ${aki.question}\n\nProgresso: ${aki.progress}\n\nResponde con /aki -r [0 o 1], 0 = si, 1 = No.`, id)
 			} else {
 				const aki = new Aki(region);
 				await aki.start()
-				await kill.reply(from, `Pregunta: ${aki.question}\n\nResponda con /akinator -r [0 o 1], 0 = si, 1 = no.`, id)
+				await kill.reply(from, `Pregunta: ${aki.question}\n\nResponda con /aki -r [0 o 1], 0 = si, 1 = no.`, id)
 			}
 			break
 			
@@ -1076,7 +1076,7 @@ if (isMedia) {
 
 
         case 'criador':
-            kill.sendContact(from, '529984907794***@c.us')
+            kill.sendContact(from, '529984907794')
 			kill.reply(from, 'Si no responde, es por que no le importas:v _OK NO_, puede estar ocupado, tu tranqui..', id)
             break
 
@@ -2850,6 +2850,7 @@ if (isMedia) {
 		
 
         case 'menu':
+        case '?':
 			if (mute) return console.log('Ignorando comando [Silence]')
 			const timed = moment(t * 1000).format('DD/MM/YY HH:mm:ss')
 			const allin = `Hola usuario "@${sender.id}"!\n\nMe lleve ${processTime(t, moment())} segundos para responder.\n\nAhora son exactamente "${timed}".\nAqui abajito estan todas mis funciones.\n`
