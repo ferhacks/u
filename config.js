@@ -1834,10 +1834,10 @@ if (isMedia) {
 			
 
 	case 'porn':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
 				if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
-				if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
             const porn = await axios.get('https://meme-api.herokuapp.com/gimme/porn')
             kill.sendFileFromUrl(from, porn.data.url, '', porn.data.title, id)
             } else {
