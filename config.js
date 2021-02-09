@@ -67,7 +67,7 @@ module.exports = kconfig = async (kill, message) => {
         const groupId = isGroupMsg ? chat.groupMetadata.id : ''
         const groupAdmins = isGroupMsg ? await kill.getGroupAdmins(groupId) : ''
         const isGroupAdmins = isGroupMsg ? groupAdmins.includes(sender.id) : false
-        const isBotGroupAdmins = isGroupMsg ? groupAdmins.includes(botNumber + '@c.us') : false
+        const isBotGroupAdmins = isGroupMsg ? groupAdmins.includes(botNumber + '@c.us') : true
 	const chats = (type === 'chat') ? body : (type === 'image' || type === 'video') ? caption : ''
         const ownerNumber = '52998****@c.us' // MUDE ISSO PARA O SEU NUMERO
         const isOwner = sender.id === ownerNumber
