@@ -298,6 +298,7 @@ module.exports = kconfig = async (kill, message) => {
 		    
 				if (isGroupMsg) {
 					if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
+					if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 					if (args.length == 0) return kill.reply(from, 'Ingrese un término de búsqueda!', id)
 					const xvide = await axios.get(`https://mnazria.herokuapp.com/api/porn?search=${body.slice(7)}`)
 					const rexvi = xvide.data.result[0]
@@ -316,6 +317,7 @@ module.exports = kconfig = async (kill, message) => {
 			
 		case 'xvideos':
 			if (mute) return console.log('Ignorando comando [Silence]')
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
             try {
 				if (isGroupMsg) {
 					if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
@@ -1432,7 +1434,8 @@ if (isMedia) {
 
         case 'nh':
             if (isGroupMsg) {
-                if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
+				if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
+				if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 				if (args.length == 1) {
 					const nuklir = body.split(' ')[1]
 					kill.reply(from, mess.wait, id)
@@ -1841,7 +1844,8 @@ if (isMedia) {
 	case 'porn':
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
-                if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
+				if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
+				if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
             const porn = await axios.get('https://meme-api.herokuapp.com/gimme/porn')
             kill.sendFileFromUrl(from, porn.data.url, '', porn.data.title, id)
             } else {
@@ -1853,7 +1857,8 @@ if (isMedia) {
 	case 'lesbian':
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
-                if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
+				if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
+				if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
             const lesb = await axios.get('https://meme-api.herokuapp.com/gimme/lesbians')
             kill.sendFileFromUrl(from, lesb.data.url, '', lesb.data.title, id)
 			} else {
@@ -2053,6 +2058,7 @@ if (isMedia) {
 			
 
 	case 'tits':
+		if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
@@ -2111,6 +2117,7 @@ if (isMedia) {
             break
 			
 	case 'milf':
+		if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
@@ -2145,6 +2152,7 @@ if (isMedia) {
 			break
 			
 	case 'bdsm':
+		if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
@@ -2179,6 +2187,7 @@ if (isMedia) {
 			break
 			
 	case 'ass':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
@@ -2213,6 +2222,7 @@ if (isMedia) {
             break
 			
 	case 'pussy':
+		if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
@@ -2333,6 +2343,7 @@ if (isMedia) {
 			
 			
         case 'iecchi':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
@@ -2363,6 +2374,7 @@ if (isMedia) {
 
         case 'blowjob':
         case 'boquete':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
@@ -2381,6 +2393,7 @@ if (isMedia) {
 
 			
         case 'feet':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
             if (isGroupMsg) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
 				if (double == 1) {
@@ -2403,6 +2416,7 @@ if (isMedia) {
 			
 			
         case 'hard':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
@@ -2416,6 +2430,7 @@ if (isMedia) {
 			
 			
         case 'boobs':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
@@ -2439,6 +2454,7 @@ if (isMedia) {
 			
 
         case 'lick':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
             if (isGroupMsg) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
 				if (double == 1) {
@@ -2461,6 +2477,7 @@ if (isMedia) {
 			
 			
         case 'femdom':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
             if (isGroupMsg) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
 				if (triple == 1) {
@@ -2489,6 +2506,7 @@ if (isMedia) {
 
 
         case 'futanari':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
             if (isGroupMsg) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
 				const futanari = await axios.get('https://nekos.life/api/v2/img/futanari')
@@ -2501,6 +2519,7 @@ if (isMedia) {
 			
 			
         case 'masturb':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
             if (isGroupMsg) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
 				if (triple == 1) {
@@ -2529,6 +2548,7 @@ if (isMedia) {
 			
 			
         case 'anal':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
 				if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
@@ -2552,6 +2572,7 @@ if (isMedia) {
 			
 			
 		case 'randomloli':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
 				if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
@@ -2565,6 +2586,7 @@ if (isMedia) {
 			
 			
         case 'nsfwicon':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
 				if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
@@ -2599,6 +2621,7 @@ if (isMedia) {
 			
 
 		case 'pezinho':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
@@ -2612,6 +2635,7 @@ if (isMedia) {
 
 
         case 'ihentai':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 			if (mute) return console.log('Ignorando comando [Silence]')
 		    const selnum = Math.floor(Math.random() * 7) + 1 
             if (isGroupMsg) {
@@ -2680,6 +2704,7 @@ if (isMedia) {
 
 
         case 'randomneko':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
@@ -2739,6 +2764,7 @@ if (isMedia) {
 
 
         case 'trap':
+			if (!isGroupMsg) return kill.reply(from, 'Lo sentimos, para evitar baneamiento de whatsapp, estos comandos no estan disponibles', id)
 			if (mute) return console.log('Ignorando comando [Silence]')
             if (isGroupMsg) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
