@@ -75,14 +75,6 @@ module.exports = kconfig = async (kill, message) => {
         global.voterslistfile = 'poll_voters_Config_'+chat.id+'.json'
 	global.client = kill
         const isBlocked = blockNumber.includes(sender.id)
-	if (!mek.message) return
-			if (mek.key && mek.key.remoteJid == 'status@broadcast') return
-			if (mek.key.fromMe) return
-	    		global.prefix
-			global.blocked
-			const content = JSON.stringify(mek.message)
-			const from = mek.key.remoteJid
-			const type = Object.keys(mek.message)[0]
 		const isLeg = exsv.includes(chatId)
 		const mute = slce.includes(chatId)
 		const pvmte = slce.includes(sender.id)
@@ -847,7 +839,7 @@ if (isMedia) {
 			case 'play':
 			if (mute || pvmte) return console.log('Comando ignorado.')
             if (args.length == 0) return kill.reply(from, 'Lo usaste incorrectamente.', id)
-            axios.get(`https://docs-jojo.herokuapp.com/api/yt-search?q=${body.slice(6)}`)
+            axios.get(`http://st4rz.herokuapp.com/api/yta?url=${body.slice(6)}`)
             .then(async (res) => {
 				const pyre = res.data.result.result[0].publishedTime
 				if (pyre == '' || pyre == 'null' || pyre == null || pyre == undefined || pyre == 'undefined') {
@@ -886,7 +878,7 @@ if (isMedia) {
         case 'video':
 			if (mute || pvmte) return console.log('Comando ignorado.')
             if (args.length == 0) return kill.reply(from, 'Lo usaste incorrectamente.', id)
-            axios.get(`https://docs-jojo.herokuapp.com/api/yt-search?q=${body.slice(6)}`)
+            axios.get(`http://st4rz.herokuapp.com/api/yta?url=${body.slice(6)}`)
             .then(async (res) => {
 				const vyre = res.data.result.result[0].publishedTime
 				if (vyre == '' || vyre == 'null' || vyre == null || vyre == undefined || vyre == 'undefined') {
