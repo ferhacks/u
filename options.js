@@ -1,10 +1,10 @@
 const fs = require('fs-extra') // Modulo de operações em disco
 
 module.exports = options = (headless, start) => {
-/*    const chromePath = {
+    const chromePath = {
         win32: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', // Windows 32 bit
         win64: 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe', //Windows 64 bit
-        linuxChrome: '/usr/bin/google-chrome-stable', // Linux - Chrome
+        linuxChrome: '/app/.apt/usr/bin/google-chrome-stable', // Linux - Chrome
         linuxChromium: '/usr/bin/chromium-browser', // Linux - Chromium
         darwin: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' // MacOS
     } // Define o local do Chrome em todos os sistemas operacionais acima
@@ -30,8 +30,8 @@ module.exports = options = (headless, start) => {
         autoRefresh: true,
         restartOnCrash: start,
         cacheEnabled: false,
-        //executablePath: execPath,
-        //useChrome: true,
+        executablePath: execPath,
+        useChrome: true,
         killProcessOnBrowserClose: true,
         throwErrorOnTosBlock: false,
         chromiumArgs: [
